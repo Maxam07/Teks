@@ -1,0 +1,6 @@
+{
+    "liveServer.settings.port": 5001,  // Set Live Server to use port 3000
+    "files.autoSave": "afterDelay",    // Enable auto-save after a delay
+    "files.autoSaveDelay": 1000,      // Delay before auto-save (1000ms = 1 second)
+  }
+  

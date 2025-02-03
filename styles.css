@@ -1,0 +1,300 @@
+html {
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-image: url("teks-bg.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+h6 {
+    font-weight: 400;
+}
+
+h1 {
+    color: rgb(10, 10, 10);
+}
+a:hover {
+    color: grey
+}
+
+a:active {
+    color: burlywood;
+}
+
+.box-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.box-container button {
+    margin-bottom: 1rem;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.box div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.box > div > div {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    font-size: small;
+    padding: 3px 1.5rem;
+    border: none;
+    border-radius: 5px;
+    background-color:  #ffffff7b;
+    color: rgb(26, 25, 25);
+}
+
+button:hover {
+    background-color: #ffffff; 
+}
+        
+.teksImage {
+    width: 6rem;
+    height: 8rem;
+    border-radius: 1rem;
+    border: .2rem solid #3f3f3f;
+    margin: .5rem 0;
+    object-fit: cover;
+}
+
+.playersCard {
+    display: block;
+    background-color: #ffffff7b;
+}
+
+.finalCards {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.finalResult {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: #ffffff7b;
+    border-radius: 20px;
+    padding: 1rem 2rem;
+    height: 40vh;
+    width: 40%;
+}
+
+h1 {
+    color: #3f3f3f;
+}
+
+.no-select {
+    user-select: none;
+}
+
+.gameOn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    box-sizing: border-box;
+}
+
+.result, .bet {
+    text-align: center;
+    color: #3f3f3f;
+}
+
+.money-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.money {
+    background-color: #ffffff7b;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+}
+
+.bet {
+    padding-inline: 1rem;
+}
+
+.teks_container {
+    margin-bottom: 3rem;
+}
+
+.teks {
+    font-size: 8rem;
+}
+
+.modal {
+    display: none; 
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; 
+    background-color: rgba(0, 0, 0, 0.5);
+    align-items: center; 
+    justify-content: center;
+    z-index: 600;
+}
+
+.modal_style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 27rem;
+    height: 15rem;
+    background-color: rgb(254, 254, 254); /* Semi-transparent dark background */
+    color: rgb(68, 68, 68); /* Text color */
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 1rem;
+}
+
+.modal_btkn {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.modal_btn button {
+    padding: .5rem 4rem;
+    font-size: large;
+    background-color: #3f3f3f57;
+    color: white;
+}
+
+.modal_btn button:hover, .betVal > button:hover {
+    background-color: #3f3f3f;
+}
+
+.betModal {
+    display: flex; /* Hidden by default */
+    position: fixed;  /* Fixed position to keep the modal on top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    z-index: 1000; /* Ensure it’s on top of everything else */
+}
+
+.betVal {
+    padding: 1rem 0;
+}
+
+.betVal > button {
+    background-color: #3f3f3fce;
+    color: white;
+    padding: .5rem 1.5rem;
+    font-size: medium;
+}
+
+.peso {
+    display: flex;
+}
+
+.premium {
+    font-size: 1.5rem;
+}
+
+.premium:hover {
+    color: #3f3f3fce,
+}
+
+.prem_card_modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.prem_modal_style {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 28rem;
+    height: 20rem;
+    background-color: rgb(254, 254, 254); /* Semi-transparent dark background */
+    color: rgb(68, 68, 68); /* Text color */
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 1rem;
+}
+
+.premium_card_container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.prem_box {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+    padding-inline: 1rem;
+}
+
+.premBtn10, .premBtn11, .premBtn12 {
+    display: block;
+    background-color: #3f3f3f57;
+}
+
+.premBtn10:hover, .premBtn11:hover, .premBtn12:hover {
+    background-color: #3f3f3f;
+    color: aliceblue;
+}
+
+.premBtnPick10, .premBtnPick11, .premBtnPick12 {
+    display: none;
+    background-color: #1e52fcd5;
+    color: aliceblue;
+}
+
+.premBtnPick10:hover, .premBtnPick11:hover, .premBtnPick12:hover {
+    background-color: #3f3f3f;
+    color: aliceblue;
+}
