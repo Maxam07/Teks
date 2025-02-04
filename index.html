@@ -18,24 +18,19 @@
                     Player I
                 </div>
 
-                <img class="teksImage" onclick="flip(this, 1)"
-                    src="https://wallpapercat.com/w/full/3/0/7/34786-1080x1920-mobile-1080p-naruto-background.jpg"
-                    alt="naruto">
+                <img class="teksImage" onclick="flip(this, 1)" src="/img/naruto_front.jpg" alt="naruto">
 
                 <div>
                     <button onclick="pickCard('demo1', 1)">Pick</button>
                 </div>
 
-                <img class="teksImage" onclick="flip(this, 2)"
-                    src="https://applescoop.org/image/wallpapers/iphone/goku-dragon-ball-z-anime-cartoon-manga-tv-show-powerful-28-10-2024-1730184405-hd-wallpaper.webp"
-                    alt="dragonballsZ">
+                <img class="teksImage" onclick="flip(this, 2)" src="/img/dragonball_front.webp" alt="dragonballsZ">
 
                 <div>
                     <button onclick="pickCard('demo1', 2)">Pick</button>
                 </div>
 
-                <img class="teksImage" onclick="flip(this, 3)" src="https://wallpaperaccess.com/full/3894340.jpg"
-                    alt="ben10">
+                <img class="teksImage" onclick="flip(this, 3)" src="/img/ben10_front.jpg" alt="ben10">
 
                 <div>
                     <button onclick="pickCard('demo1', 3)">Pick</button>
@@ -74,140 +69,134 @@
                         <i class="fa-solid fa-square-plus premium" onclick="premCardsOpen()"></i>
                         Player II
                     </div>
-                    <img class="teksImage" onclick="flip(this, 4)"
-                        src="https://sasiwallpaper.co.za/cdn/shop/files/Screenshot2021-09-13at12.48.52_c3fad912-5d50-4b54-96d1-16b0b3755f73.png?v=1683532338"
-                        alt="superman">
+                    <img class="teksImage" onclick="flip(this, 4)" src="/img/superman_front.webp" alt="superman">
                     <div>
                         <button onclick="pickCard('demo2', 4)">Pick</button>
                     </div>
-                    <img class="teksImage" onclick="flip(this, 5)"
-                        src="https://i.pinimg.com/736x/af/a1/8e/afa18e4397302db6101aa079cdc9b67f.jpg"
-                        alt="dragonballsZ">
+                    <img class="teksImage" onclick="flip(this, 5)" src="/img/cars_front.jpg" alt="cars">
                     <div>
                         <button onclick="pickCard('demo2', 5)">Pick</button>
                     </div>
-                    <img class="teksImage" onclick="flip(this, 6)"
-                        src="https://i.pinimg.com/736x/90/83/24/9083245a2bb9a5eb82480830f0f979e5.jpg" alt="ben10">
+                    <img class="teksImage" onclick="flip(this, 6)" src="img/bleach_front.jpg" alt="bleach">
                     <div>
                         <button onclick="pickCard('demo2', 6)">Pick</button>
                     </div>
                 </div>
             </div>
 
-        <div id="moveUp" class="gameOn">
-            <div class="finalResult">
-                <div style="text-align: left;">
-                    Bet
+            <div id="moveUp" class="gameOn">
+                <div class="finalResult">
+                    <div style="text-align: left;">
+                        Bet
                         <div class="peso">
                             <h3>₱</h3>
                             <h3 id="betLabel"></h3>
                         </div>
-                </div>
-                <div class="finalCards">
-                    <img id="demo1" class="teksImage">
-                    <img id="demo" class="teksImage">
-                    <img id="demo2" class="teksImage">
-                </div>
-                <div class="money-container">
-                    <div class="money">
-                        <i class="fa-solid fa-coins"></i>
-                        Player I
-                        <div class="peso">
-                            <h3>₱</h3>
-                            <h3 id="p1_initial">2000</h3>
-                        </div>
                     </div>
-                    <div class="money">
-                        <i class="fa-solid fa-coins"></i>
-                        Player II
-                        <div class="peso">
-                            <h3>₱</h3>
-                            <h3 id="p2_initial">2000</h3>
+                    <div class="finalCards">
+                        <img id="demo1" class="teksImage">
+                        <img id="demo" class="teksImage">
+                        <img id="demo2" class="teksImage">
+                    </div>
+                    <div class="money-container">
+                        <div class="money">
+                            <i class="fa-solid fa-coins"></i>
+                            Player I
+                            <div class="peso">
+                                <h3>₱</h3>
+                                <h3 id="p1_initial">2000</h3>
+                            </div>
+                        </div>
+                        <div class="money">
+                            <i class="fa-solid fa-coins"></i>
+                            Player II
+                            <div class="peso">
+                                <h3>₱</h3>
+                                <h3 id="p2_initial">2000</h3>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="modal">
-            <div>
-                <div class="showtModal">
-                    <i class="fa-regular fa-eye-slash showResultModal" onclick="showResultModal()" style="font-size: 24px;"></i>
-                </div>    
+            <div class="modal">
+                <div>
+                    <div class="showtModal">
+                        <i class="fa-regular fa-eye-slash showResultModal" onclick="showResultModal()"
+                            style="font-size: 24px;"></i>
+                    </div>
+                    <div class="modal_style">
+                        <i class="fa-regular fa-eye view_cards" onclick="hideModal()"></i>
+                        <h3 id="result"></h3>
+                        <span id="winBet"></span>
+                        <div class="modal_btn">
+                            <button>Exit</button>
+                            <button onclick="playAgain()">Play</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="betModal">
                 <div class="modal_style">
-                    <i class="fa-regular fa-eye view_cards" onclick="hideModal()"></i>
-                    <h3 id="result"></h3>
-                    <span id="winBet"></span>
+                    <h3>Place Bet!</h3>
+                    <div style="display: flex; justify-content: center;">
+                        ₱
+                        <h4 id="betRes"></h4>
+                    </div>
+                    <span id="moneyStatus"></span>
+                    <div class="betVal">
+                        <button id="bet1" onclick="placeBet(1)">₱ 100</button>
+                        <button id="bet2" onclick="placeBet(2)">₱ 200</button>
+                        <button id="bet3" onclick="placeBet(3)">₱ 300</button>
+                        <button id="bet4" onclick="placeBet(4)">₱ 1000</button>
+                    </div>
                     <div class="modal_btn">
                         <button>Exit</button>
-                        <button onclick="playAgain()">Play</button>
+                        <button onclick="placeBetandStart()">Play</button>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div class="betModal">
-            <div class="modal_style">
-                <h3>Place Bet!</h3>
-                <div style="display: flex; justify-content: center;">
-                    ₱
-                    <h4 id="betRes"></h4>
-                </div>
-                <span id="moneyStatus"></span>
-                <div class="betVal">
-                    <button id="bet1" onclick="placeBet(1)">₱ 100</button>
-                    <button id="bet2" onclick="placeBet(2)">₱ 200</button>
-                    <button id="bet3" onclick="placeBet(3)">₱ 300</button>
-                    <button id="bet4" onclick="placeBet(4)">₱ 1000</button>
-                </div>
-                <div class="modal_btn">
-                    <button>Exit</button>
-                    <button onclick="placeBetandStart()">Play</button>
+            <!-- Premium Cards Modal-->
+            <div class="prem_card_modal">
+                <div class="prem_modal_style">
+                    <h5 style="padding-bottom: 1rem;">₱500 Each</h5>
+                    <div style="display: flex; justify-content: center;">
+                        <h5>Balance: ₱</h5>
+                        <h5 id="bal"></h5>
+                    </div>
+                    <h6 id="premBuyerStat"></h6>
+                    <div class="premium_card_container">
+                        <div class="prem_box">
+                            <img class="teksImage" onclick="flip(this, 10)" src="/img/sonic_front.gif" alt="sonic">
+                            <button class="premBtn10" onclick="buyPremCard('demo1', 10)">Buy</button>
+                            <button class="premBtnPick10" onclick="pickCard('demo1', 10)">Pick</button>
+                        </div>
+                        <div class="prem_box">
+                            <img class="teksImage" onclick="flip(this, 11)"
+                                src="https://i.pinimg.com/originals/8b/d5/52/8bd552b7ed048b3b4b28cdb07ade4c44.gif"
+                                alt="transformers">
+                            <button class="premBtn11" onclick="buyPremCard('demo1', 11)">Buy</button>
+                            <button class="premBtnPick11" onclick="pickCard('demo1', 11)">Pick</button>
+                        </div>
+                        <div class="prem_box">
+                            <img class="teksImage" onclick="flip(this, 12)"
+                                src="https://i.pinimg.com/originals/9c/41/ab/9c41abdbfa14e30f012bb57fda6fe293.gif"
+                                alt="cool car">
+                            <button class="premBtn12" onclick="buyPremCard('demo1', 12)">Buy</button>
+                            <button class="premBtnPick12" onclick="pickCard('demo1', 12)">Pick</button>
+                        </div>
+                    </div>
+
+                    <div class="modal_btn">
+                        <button onclick="premCardsClose()">Close</button>
+                    </div>
                 </div>
             </div>
-        </div>
+            <!-- Premium Cards Modal end-->
 
-        <!-- Premium Cards Modal-->
-        <div class="prem_card_modal">
-            <div class="prem_modal_style">
-                <h5 style="padding-bottom: 1rem;">₱500 Each</h5>
-                <div style="display: flex; justify-content: center;">
-                    <h5>Balance: ₱</h5>
-                    <h5 id="bal"></h5>
-                </div>
-                <h6 id="premBuyerStat"></h6>
-                <div class="premium_card_container">
-                    <div class="prem_box">
-                        <img class="teksImage" onclick="flip(this, 10)"
-                            src="https://i.pinimg.com/originals/3c/d9/c4/3cd9c417e306464378e1011577f4b68f.gif"
-                            alt="sonic">
-                        <button class="premBtn10" onclick="buyPremCard('demo1', 10)">Buy</button>
-                        <button class="premBtnPick10" onclick="pickCard('demo1', 10)">Pick</button>
-                    </div>
-                    <div class="prem_box">
-                        <img class="teksImage" onclick="flip(this, 11)"
-                            src="https://i.pinimg.com/originals/8b/d5/52/8bd552b7ed048b3b4b28cdb07ade4c44.gif"
-                            alt="transformers">
-                        <button class="premBtn11" onclick="buyPremCard('demo1', 11)">Buy</button>
-                        <button class="premBtnPick11" onclick="pickCard('demo1', 11)">Pick</button>
-                    </div>
-                    <div class="prem_box">
-                        <img class="teksImage" onclick="flip(this, 12)"
-                            src="https://i.pinimg.com/originals/9c/41/ab/9c41abdbfa14e30f012bb57fda6fe293.gif" 
-                            alt="cool car">
-                        <button class="premBtn12" onclick="buyPremCard('demo1', 12)">Buy</button>
-                        <button class="premBtnPick12" onclick="pickCard('demo1', 12)">Pick</button>
-                    </div>
-                </div>
-
-                <div class="modal_btn">
-                    <button onclick="premCardsClose()">Close</button>
-                </div>
-            </div>
-        </div>
-        <!-- Premium Cards Modal end-->
-
-        <script src="index.js"></script>
+            <script src="index.js"></script>
 </body>
 
 </html>
