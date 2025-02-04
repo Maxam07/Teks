@@ -160,8 +160,6 @@ function showCardBack(playerId, imageSet) {
 function teksPlay() {
     let num = [0, 1];
     let index = 0;
-    let randomTimeOut = [1000, 2000, 3000, 4000];
-
 
     // Check if either player has not picked a card, and if so, display "Pick Card"
     if (pickedCards.demo1 === null || pickedCards.demo2 === null || pickedCards.demo === null) {
@@ -183,8 +181,8 @@ function teksPlay() {
     // Randomly assign image for Player 1 (demo1)
     if (pickedCards.demo1 !== null) {
     let imageSetForPlayer1 = pickedCards.demo1 === 1 ? p1_imageSet_1 : pickedCards.demo1 === 2 ? p1_imageSet_2 : pickedCards.demo1 === 3 ? p1_imageSet_3 : pickedCards.demo1 === 10 ? p1_imageSet_4 : pickedCards.demo1 === 11 ? p1_imageSet_5 :  p1_imageSet_6;
-    let ranTimeOut = Math.floor(Math.random() * randomTimeOut.length);
-    console.log(randomTimeOut[ranTimeOut])
+    let ranTimeOut = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;;
+    console.log(ranTimeOut)
         let interval = setInterval(() => {
             document.getElementById("demo1").src = imageSetForPlayer1[index];
             index = (index + 1) % num.length;
@@ -197,15 +195,15 @@ function teksPlay() {
             imageRes = imageSetForPlayer1[randomNumPlayer1];
             document.getElementById("demo1").src = imageRes;
             player3();  // Start Player 2's interval after Player 1 is finished
-        }, randomTimeOut[ranTimeOut]);  // 3 seconds delay
+        }, ranTimeOut);  // 3 seconds delay
     }
 
     function player2() {
         // Randomly assign image for Player 2 (demo2)
         if (pickedCards.demo2 !== null) {
             let imageSetForPlayer2 = pickedCards.demo2 === 4 ? p2_imageSet_1 : pickedCards.demo2 === 5 ? p2_imageSet_2 : p2_imageSet_3;
-            let ranTimeOut = Math.floor(Math.random() * randomTimeOut.length);
-            console.log(randomTimeOut[ranTimeOut])
+            let ranTimeOut = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;;
+            console.log(ranTimeOut)
             let index = 0; // Reset index for Player 2's images
             let interval = setInterval(() => {
                 document.getElementById("demo2").src = imageSetForPlayer2[index];
@@ -219,15 +217,15 @@ function teksPlay() {
                 imageRes = imageSetForPlayer2[randomNumPlayer2];
                 document.getElementById("demo2").src = imageRes; // Correct assignment
                 setTimeout(showModal, 500);
-            }, randomTimeOut[ranTimeOut]);  // 3 seconds delay
+            }, ranTimeOut);  // 3 seconds delay
         }
     }
 
     function player3() {
         if(pickedCards.demo !== null) {
             let imageSetForPlayer3 = pickedCards.demo === 7 ? p3_imageSet_1 : pickedCards.demo === 8 ? p3_imageSet_2 : p3_imageSet_3;
-            let ranTimeOut = Math.floor(Math.random() * randomTimeOut.length);
-            console.log(randomTimeOut[ranTimeOut])
+            let ranTimeOut = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;;
+            console.log(ranTimeOut)
             let index = 0;
             let interval = setInterval(() => {
                 document.getElementById("demo").src = imageSetForPlayer3[index];
@@ -240,7 +238,7 @@ function teksPlay() {
                 imageRes = imageSetForPlayer3[randomNumPlayer3];
                 document.getElementById("demo").src = imageRes;
                 player2();
-            }, randomTimeOut[ranTimeOut])
+            }, ranTimeOut)
         }
     }
 }
