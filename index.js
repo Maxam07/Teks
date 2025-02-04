@@ -362,7 +362,6 @@ function buyPremCard(cardId, imageSet) {
         document.getElementById("premBuyerStat").innerHTML = "Congratulations! You acquired a premium card!";
         document.querySelector(".premBtn10").style.display = "none"
         if (p1Money >= premCardValue) {
-            premCardId.src = buyMeCards.card1.front; // Show the front of the card
             document.querySelector(".premBtnPick10").style.display = "block"
             p1Money -= premCardValue; // Deduct money
             p1_initial.innerHTML = p1Money; // Update UI
@@ -373,10 +372,8 @@ function buyPremCard(cardId, imageSet) {
         }
     } else if (imageSet === 11) {
         document.getElementById("premBuyerStat").innerHTML = "Congratulations! You acquired a premium card!";
-
         document.querySelector(".premBtn11").style.display = "none"
         if (p1Money >= premCardValue) {
-            premCardId.src = buyMeCards.card2.front; // Show the front of the card
             document.querySelector(".premBtnPick11").style.display = "block"
             p1Money -= premCardValue; // Deduct money
             p1_initial.innerHTML = p1Money; // Update UI
@@ -389,7 +386,6 @@ function buyPremCard(cardId, imageSet) {
         document.getElementById("premBuyerStat").innerHTML = "Congratulations! You acquired a premium card!";
         document.querySelector(".premBtn12").style.display = "none"
         if (p1Money >= premCardValue) {
-            premCardId.src = buyMeCards.card3.front; // Show the front of the card
             document.querySelector(".premBtnPick12").style.display = "block"    
             p1Money -= premCardValue; // Deduct money
             p1_initial.innerHTML = p1Money; // Update UI
