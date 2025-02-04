@@ -1,6 +1,6 @@
-// Premium Cards
-const buyMeCards = {
-    card1: { front: "https://i.pinimg.com/originals/3c/d9/c4/3cd9c417e306464378e1011577f4b68f.gif", back: "https://w0.peakpx.com/wallpaper/842/336/HD-wallpaper-black-sonic-heroes-amoled-dark-knuckles-sega-sonic-heroes-tails-thumbnail.jpg" },
+// Premium Cards image set
+const premium_cards = {
+    card1: { front: "/img/sonic_front.gif", back: "/img/sonic_back.jpg"},
     card2: { front: "https://i.pinimg.com/originals/8b/d5/52/8bd552b7ed048b3b4b28cdb07ade4c44.gif", back: "https://i.pinimg.com/564x/80/a1/1b/80a11b571d12029f80c1a09553574fc5.jpg" },
     card3: { front: "https://i.pinimg.com/originals/9c/41/ab/9c41abdbfa14e30f012bb57fda6fe293.gif", back: "https://w0.peakpx.com/wallpaper/434/381/HD-wallpaper-fast-black-black-and-white-car-chevy-cool-logo-motion-my-speed-super.jpg" },
     card4: { front: "", back: "" },
@@ -8,21 +8,19 @@ const buyMeCards = {
     card6: { front: "", back: "" }
 };
 
-// Player1 image sets
-const P1_card_front_1 = "https://wallpapercat.com/w/full/3/0/7/34786-1080x1920-mobile-1080p-naruto-background.jpg";
-const P1_card_back_1 = "https://i.pinimg.com/originals/6f/f6/3e/6ff63e36931a975d1677021735e003db.png";
-const P1_card_front_2 = "https://applescoop.org/image/wallpapers/iphone/goku-dragon-ball-z-anime-cartoon-manga-tv-show-powerful-28-10-2024-1730184405-hd-wallpaper.webp";
-const P1_card_back_2 = "https://i.pinimg.com/736x/6d/0a/7d/6d0a7dc45f0a8f0cbaf281e6b2452b53.jpg";
-const P1_card_front_3 = "https://wallpaperaccess.com/full/3894340.jpg";
-const P1_card_back_3 = "https://i.pinimg.com/736x/cb/83/2c/cb832c596699ade06a6c47442d4a4715.jpg";
+// Player1 Cards image set
+const P1_cards = {
+    card1: {front: "/img/naruto_front.jpg", back: "/img/naruto_back.png"},
+    card2: {front: "/img/dragonball_front.webp", back: "/img/dragonball_back.jpg"},
+    card3: {front: "/img/ben10_front.jpg", back: "/img/ben10_back.jpg"}
+}
 
 // Player2 image sets
-const P2_card_front_1 = "https://sasiwallpaper.co.za/cdn/shop/files/Screenshot2021-09-13at12.48.52_c3fad912-5d50-4b54-96d1-16b0b3755f73.png?v=1683532338";
-const P2_card_back_1 = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/aaa79357-9476-4c1d-b9a8-6e881f2449d3/dfqt5vc-949f6edd-1395-4789-97de-e9812fc6b803.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FhYTc5MzU3LTk0NzYtNGMxZC1iOWE4LTZlODgxZjI0NDlkM1wvZGZxdDV2Yy05NDlmNmVkZC0xMzk1LTQ3ODktOTdkZS1lOTgxMmZjNmI4MDMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2Ef0yKKgGT28owSGxCG6kXALA1XPr8IOY3kw7cZo_8A";
-const P2_card_front_2 = "https://i.pinimg.com/736x/af/a1/8e/afa18e4397302db6101aa079cdc9b67f.jpg";
-const P2_card_back_2 = "https://imgcdn.stablediffusionweb.com/2024/4/20/c4d2c0fd-c075-47c2-b5ad-3c8ef334b3a6.jpg";
-const P2_card_front_3 = "https://i.pinimg.com/736x/90/83/24/9083245a2bb9a5eb82480830f0f979e5.jpg";
-const P2_card_back_3 = "https://i.pinimg.com/originals/e0/ab/a4/e0aba4a26f4476293ace530cd35790a0.jpg";
+const P2_cards = {
+    card1: {front: "/img/superman_front.webp", back: "/img/superman_back.jpg"},
+    card2: {front: "/img/cars_front.jpg", back: "/img/cars_back.jpg"},
+    card3: {front: "/img/bleach_front.jpg", back: "/img/bleach_back.jpg"}
+}
 
 // Bugaw/Player3 image set
 const P3_card_front_1 = "https://m.media-amazon.com/images/M/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg";
@@ -33,16 +31,17 @@ const P3_card_front_3 = "https://wallpapersmug.com/download/1224x1224/4c2607/jus
 const P3_card_back_3 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmx1_QBO9Mpi0yEeOZN3eo1JuferbIQemoog&s"
 
 // Image sets for easy access with "imageFront" and "imageBack" naming
-const p1_imageSet_1 = [P1_card_front_1, P1_card_back_1];
-const p1_imageSet_2 = [P1_card_front_2, P1_card_back_2];
-const p1_imageSet_3 = [P1_card_front_3, P1_card_back_3];
-const p1_imageSet_4 = [buyMeCards.card1.front, buyMeCards.card1.back]
-const p1_imageSet_5 = [buyMeCards.card2.front, buyMeCards.card2.back]
-const p1_imageSet_6 = [buyMeCards.card3.front, buyMeCards.card3.back]
+const p1_imageSet_4 = [premium_cards.card1.front, premium_cards.card1.back]
+const p1_imageSet_5 = [premium_cards.card2.front, premium_cards.card2.back]
+const p1_imageSet_6 = [premium_cards.card3.front, premium_cards.card3.back]
 
-const p2_imageSet_1 = [P2_card_front_1, P2_card_back_1];
-const p2_imageSet_2 = [P2_card_front_2, P2_card_back_2];
-const p2_imageSet_3 = [P2_card_front_3, P2_card_back_3];
+const p1_imageSet_1 = [P1_cards.card1.front, P1_cards.card1.back];
+const p1_imageSet_2 = [P1_cards.card2.front, P1_cards.card2.back];
+const p1_imageSet_3 = [P1_cards.card3.front, P1_cards.card3.back];
+
+const p2_imageSet_1 = [P2_cards.card1.front, P2_cards.card1.back];
+const p2_imageSet_2 = [P2_cards.card2.front, P2_cards.card2.back];
+const p2_imageSet_3 = [P2_cards.card3.front, P2_cards.card3.back];
 
 const p3_imageSet_1 = [P3_card_front_1, P3_card_back_1];
 const p3_imageSet_2 = [P3_card_front_2, P3_card_back_2];
@@ -73,22 +72,28 @@ function flip(element, imageSet) {
 
     // If imageSet is picked
     if (imageSet === 1) {
-        currentImage === P1_card_front_1 ? element.src = P1_card_back_1 : element.src = P1_card_front_1;
+        element.src = element.classList.contains('flipped') ? element.src = P1_cards.card1.back : P1_cards.card1.front;
+        element.classList.toggle('flipped');
     } 
     else if (imageSet === 2) {
-        currentImage === P1_card_front_2 ? element.src = P1_card_back_2 : element.src = P1_card_front_2;
+        element.src = element.classList.contains('flipped') ? element.src = P1_cards.card2.back : P1_cards.card2.front;
+        element.classList.toggle('flipped');
     }
     else if (imageSet === 3) {
-        currentImage === P1_card_front_3 ? element.src = P1_card_back_3 : element.src = P1_card_front_3
+        element.src = element.classList.contains('flipped') ? element.src = P1_cards.card3.back : P1_cards.card3.front
+        element.classList.toggle('flipped');
     }
     else if(imageSet === 4) {
-        currentImage === P2_card_front_1 ? element.src = P2_card_back_1 : element.src = P2_card_front_1;
+        element.src = element.classList.contains('flipped') ? element.src = P2_cards.card1.back : P2_cards.card1.front;
+        element.classList.toggle('flipped');
     }
     else if(imageSet === 5) {
-        currentImage === P2_card_front_2 ? element.src = P2_card_back_2 : element.src = P2_card_front_2;
+        element.src = element.classList.contains('flipped') ? element.src = P2_cards.card2.back : P2_cards.card2.front;
+        element.classList.toggle('flipped');
     }
     else if(imageSet === 6) {
-        currentImage === P2_card_front_3 ? element.src = P2_card_back_3 : element.src = P2_card_front_3;
+        element.src = element.classList.contains('flipped') ? P2_cards.card3.back : element.src = P2_cards.card3.front;
+        element.classList.toggle('flipped');
     }
     else if(imageSet === 7) {
         currentImage === P3_card_front_1 ? element.src = P3_card_back_1 : element.src = P3_card_front_1;
@@ -100,13 +105,14 @@ function flip(element, imageSet) {
         currentImage === P3_card_front_3 ? element.src = P3_card_back_3 : element.src = P3_card_front_3;
     } 
     else if(imageSet === 10) {
-        currentImage === buyMeCards.card1.front ? element.src = buyMeCards.card1.back : element.src = buyMeCards.card1.front;
+        element.src = element.classList.contains('flipped') ? element.src = premium_cards.card1.front : element.src = premium_cards.card1.back;
+        element.classList.toggle('flipped');
     }
     else if(imageSet === 11) {
-        currentImage === buyMeCards.card2.front ? element.src = buyMeCards.card2.back : element.src = buyMeCards.card2.front;  
+        currentImage === premium_cards.card2.front ? element.src = premium_cards.card2.back : element.src = premium_cards.card2.front;  
     }
     else if(imageSet === 12) {
-        currentImage === buyMeCards.card3.front ? element.src = buyMeCards.card3.back : element.src = buyMeCards.card3.front;
+        currentImage === premium_cards.card3.front ? element.src = premium_cards.card3.back : element.src = premium_cards.card3.front;
     }
 }
 
@@ -117,17 +123,17 @@ function pickCard(cardId, imageSet) {
 
     // Set the initial image for the card based on the image set picked
     if (imageSet === 1) {
-        card.src = P1_card_back_1; 
+        card.src = P1_cards.card1.back; 
     } else if (imageSet === 2) {
-        card.src = P1_card_back_2; 
+        card.src = P1_cards.card2.back; 
     } else if (imageSet === 3) {
-        card.src = P1_card_back_3; 
+        card.src = P1_cards.card3.back; 
     } else if (imageSet === 4) {
-        card.src = P2_card_back_1;
+        card.src = P2_cards.card1.back;
     } else if (imageSet === 5) {
-        card.src = P2_card_back_2;
+        card.src = P2_cards.card2.back;
     } else if (imageSet === 6) {
-        card.src = P2_card_back_3;
+        card.src = P2_cards.card3.back;
     } else if (imageSet === 7) {
         card.src = P3_card_back_1;
     } else if (imageSet === 8) {
@@ -135,21 +141,21 @@ function pickCard(cardId, imageSet) {
     } else if (imageSet === 9) {
         card.src = P3_card_back_3;
     } else if (imageSet === 10) {
-        card.src = buyMeCards.card1.back
+        card.src = premium_cards.card1.back
     } else if (imageSet === 11) {
-        card.src = buyMeCards.card2.back
+        card.src = premium_cards.card2.back
     } else if (imageSet === 12) {
-        card.src = buyMeCards.card3.back
+        card.src = premium_cards.card3.back
     }
 }
 
 function showCardBack(playerId, imageSet) {
     const card = document.getElementById(playerId);
     const cardBacks = [
-        P1_card_back_1, P1_card_back_2, P1_card_back_3,
-        P2_card_back_1, P2_card_back_2, P2_card_back_3,
+        P1_cards.card1.back, P1_cards.card2.back, P1_cards.card3.back,
+        P2_cards.card1.back, P2_cards.card2.back, P2_cards.card3.back,
         P3_card_back_1, P3_card_back_2, P3_card_back_3,
-        buyMeCards.card1.back, buyMeCards.card2.back, buyMeCards.card3.back,
+        premium_cards.card1.back, premium_cards.card2.back, premium_cards.card3.back,
     ];
     if (imageSet >= 1 && imageSet <= 12) {
         card.src = cardBacks[imageSet - 1];  // imageSet is 1-indexed, array is 0-indexed
