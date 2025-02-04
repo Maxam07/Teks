@@ -160,6 +160,7 @@ function showCardBack(playerId, imageSet) {
 function teksPlay() {
     let num = [0, 1];
     let index = 0;
+    let flipSpeed = Math.floor(Math.random() * (400 - 200 + 1)) + 200;
 
     // Check if either player has not picked a card, and if so, display "Pick Card"
     if (pickedCards.demo1 === null || pickedCards.demo2 === null || pickedCards.demo === null) {
@@ -182,11 +183,10 @@ function teksPlay() {
     if (pickedCards.demo1 !== null) {
     let imageSetForPlayer1 = pickedCards.demo1 === 1 ? p1_imageSet_1 : pickedCards.demo1 === 2 ? p1_imageSet_2 : pickedCards.demo1 === 3 ? p1_imageSet_3 : pickedCards.demo1 === 10 ? p1_imageSet_4 : pickedCards.demo1 === 11 ? p1_imageSet_5 :  p1_imageSet_6;
     let ranTimeOut = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;;
-    console.log(ranTimeOut)
         let interval = setInterval(() => {
             document.getElementById("demo1").src = imageSetForPlayer1[index];
             index = (index + 1) % num.length;
-        }, 200);
+        }, flipSpeed);
 
         // After 3 seconds, clear the interval and set final result for Player 1, then call player2()
         setTimeout(() => {
@@ -203,12 +203,11 @@ function teksPlay() {
         if (pickedCards.demo2 !== null) {
             let imageSetForPlayer2 = pickedCards.demo2 === 4 ? p2_imageSet_1 : pickedCards.demo2 === 5 ? p2_imageSet_2 : p2_imageSet_3;
             let ranTimeOut = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;;
-            console.log(ranTimeOut)
             let index = 0; // Reset index for Player 2's images
             let interval = setInterval(() => {
                 document.getElementById("demo2").src = imageSetForPlayer2[index];
                 index = (index + 1) % num.length;
-            }, 200);
+            }, flipSpeed);
 
             // After 3 seconds, clear the interval and set final result for Player 2
             setTimeout(() => {
@@ -225,12 +224,11 @@ function teksPlay() {
         if(pickedCards.demo !== null) {
             let imageSetForPlayer3 = pickedCards.demo === 7 ? p3_imageSet_1 : pickedCards.demo === 8 ? p3_imageSet_2 : p3_imageSet_3;
             let ranTimeOut = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;;
-            console.log(ranTimeOut)
             let index = 0;
             let interval = setInterval(() => {
                 document.getElementById("demo").src = imageSetForPlayer3[index];
                 index = (index + 1) % num.length;
-            }, 200);
+            }, flipSpeed);
 
             setTimeout(() => {
                 clearInterval(interval);
