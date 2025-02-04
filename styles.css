@@ -95,6 +95,12 @@ button:hover {
     background-color: #ffffff7b;
 }
 
+.plus_prem_card {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
 .finalCards {
     display: flex;
     justify-content: space-evenly;
@@ -186,6 +192,23 @@ h1 {
     text-align: center;
     font-size: 24px;
     border-radius: 1rem;
+    visibility: visible;
+}
+
+.view_cards:hover, .showResultModal:hover, .premium:hover {
+    color: #3f3f3f67;
+}
+
+.showResultModal {
+    position: relative;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+}
+
+.showModal {
+    position: absolute;
+    z-index: 2000;
 }
 
 .modal_btkn {

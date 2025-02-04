@@ -13,7 +13,7 @@
     <div class="playersCard">
         <div class="box-container player1">
             <div style="padding: 2rem;">
-                <div style="display: flex; align-items: center; justify-content: space-evenly;">
+                <div class="plus_prem_card">
                     <i class="fa-solid fa-square-plus premium" onclick="premCardsOpen()"></i>
                     Player I
                 </div>
@@ -70,7 +70,7 @@
 
             <div class="player2">
                 <div style="padding: 2rem;">
-                    <div style="display: flex; align-items: center; justify-content: space-evenly;">
+                    <div class="plus_prem_card">
                         <i class="fa-solid fa-square-plus premium" onclick="premCardsOpen()"></i>
                         Player II
                     </div>
@@ -130,12 +130,18 @@
         </div>
 
         <div class="modal">
-            <div class="modal_style">
-                <h3 id="result"></h3>
-                <span id="winBet"></span>
-                <div class="modal_btn">
-                    <button>Exit</button>
-                    <button onclick="playAgain()">Play</button>
+            <div>
+                <div class="showtModal">
+                    <i class="fa-regular fa-eye-slash showResultModal" onclick="showResultModal()" style="font-size: 24px;"></i>
+                </div>    
+                <div class="modal_style">
+                    <i class="fa-regular fa-eye view_cards" onclick="hideModal()"></i>
+                    <h3 id="result"></h3>
+                    <span id="winBet"></span>
+                    <div class="modal_btn">
+                        <button>Exit</button>
+                        <button onclick="playAgain()">Play</button>
+                    </div>
                 </div>
             </div>
         </div>

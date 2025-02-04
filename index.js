@@ -396,3 +396,13 @@ function buyPremCard(cardId, imageSet) {
         }
     }
 }
+
+function hideModal() {
+    document.querySelector(".modal_style").style.visibility = "hidden";
+    document.querySelector(".showResultModal").style.visibility = "visible"
+}
+
+function showResultModal() {
+    document.querySelector(".modal_style").style.visibility = "visible";
+    document.querySelector(".showResultModal").style.visibility = "hidden"
+}
