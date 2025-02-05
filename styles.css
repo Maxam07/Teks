@@ -73,12 +73,13 @@ button {
     padding: 3px 1.5rem;
     border: none;
     border-radius: 5px;
-    background-color:  #ffffff7b;
-    color: rgb(26, 25, 25);
+    background-color:  #7d7c7cbe;
+    color:aliceblue;
 }
 
 button:hover {
     background-color: #ffffff; 
+    color: #3f3f3f;
 }
         
 .teksImage {
@@ -263,7 +264,7 @@ h1 {
     color: #3f3f3fce,
 }
 
-.prem_card_modal {
+.P1_prem_card_modal, .P2_prem_card_modal {
     display: none;
     position: fixed;
     z-index: 1000;
@@ -302,23 +303,23 @@ h1 {
     padding-inline: 1rem;
 }
 
-.premBtn10, .premBtn11, .premBtn12 {
+.premBtn10, .premBtn11, .premBtn12, .premBtn13, .premBtn14, .premBtn15 {
     display: block;
     background-color: #3f3f3f57;
 }
 
-.premBtn10:hover, .premBtn11:hover, .premBtn12:hover {
+.premBtn10:hover, .premBtn11:hover, .premBtn12:hover, .premBtn13:hover, .premBtn14:hover, .premBtn15:hover {
     background-color: #3f3f3f;
     color: aliceblue;
 }
 
-.premBtnPick10, .premBtnPick11, .premBtnPick12 {
+.premBtnPick10, .premBtnPick11, .premBtnPick12, .premBtnPick13, .premBtnPick14, .premBtnPick15 {
     display: none;
     background-color: #1e52fcd5;
     color: aliceblue;
 }
 
-.premBtnPick10:hover, .premBtnPick11:hover, .premBtnPick12:hover {
+.premBtnPick10:hover, .premBtnPick11:hover, .premBtnPick12:hover, .premBtnPick13:hover, .premBtnPick14:hover, .premBtnPick15:hover {
     background-color: #3f3f3f;
     color: aliceblue;
 }
