@@ -14,7 +14,7 @@
         <div class="box-container player1">
             <div style="padding: 2rem;">
                 <div class="plus_prem_card">
-                    <i class="fa-solid fa-square-plus premium" onclick="premCardsOpen()"></i>
+                    <i class="fa-solid fa-cart-plus premium" onclick="premCardsOpen(1)"></i>
                     Player I
                 </div>
 
@@ -66,7 +66,7 @@
             <div class="player2">
                 <div style="padding: 2rem;">
                     <div class="plus_prem_card">
-                        <i class="fa-solid fa-square-plus premium" onclick="premCardsOpen()"></i>
+                        <i class="fa-solid fa-cart-plus premium" onclick="premCardsOpen(2)"></i>
                         Player II
                     </div>
                     <img class="teksImage" onclick="flip(this, 4)" src="/img/superman_front.webp" alt="superman">
@@ -158,8 +158,8 @@
                 </div>
             </div>
 
-            <!-- Premium Cards Modal-->
-            <div class="prem_card_modal">
+            <!-- PLAYER 1 Premium Cards Modal -->
+            <div class="P1_prem_card_modal">
                 <div class="prem_modal_style">
                     <h5 style="padding-bottom: 1rem;">₱500 Each</h5>
                     <div style="display: flex; justify-content: center;">
@@ -190,7 +190,45 @@
                     </div>
 
                     <div class="modal_btn">
-                        <button onclick="premCardsClose()">Close</button>
+                        <button onclick="premCardsClose(1)">Close</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Premium Cards Modal end -->
+
+            <!-- PLAYER 2 Premium Cards Modal -->
+            <div class="P2_prem_card_modal">
+                <div class="prem_modal_style">
+                    <h5 style="padding-bottom: 1rem;">₱500 Each</h5>
+                    <div style="display: flex; justify-content: center;">
+                        <h5>Balance: ₱</h5>
+                        <h5 id="balp2"></h5>
+                    </div>
+                    <h6 id="premBuyerStatp2"></h6>
+                    <div class="premium_card_container">
+                        <div class="prem_box">
+                            <img class="teksImage" onclick="flip(this, 13)" src="/img/captainMarvel_front.webp" alt="sonic">
+                            <button class="premBtn13" onclick="buyPremCard('demo2', 13)">Buy</button>
+                            <button class="premBtnPick13" onclick="pickCard('demo2', 13)">Pick</button>
+                        </div>
+                        <div class="prem_box">
+                            <img class="teksImage" onclick="flip(this, 14)"
+                                src="/img//bleach_front.jpg"
+                                alt="transformers">
+                            <button class="premBtn14" onclick="buyPremCard('demo2', 14)">Buy</button>
+                            <button class="premBtnPick14" onclick="pickCard('demo2', 14)">Pick</button>
+                        </div>
+                        <div class="prem_box">
+                            <img class="teksImage" onclick="flip(this, 15)"
+                                src="/img/cars_front.jpg"
+                                alt="cool car">
+                            <button class="premBtn15" onclick="buyPremCard('demo2', 15)">Buy</button>
+                            <button class="premBtnPick15" onclick="pickCard('demo2', 15)">Pick</button>
+                        </div>
+                    </div>
+
+                    <div class="modal_btn">
+                        <button onclick="premCardsClose(2)">Close</button>
                     </div>
                 </div>
             </div>
