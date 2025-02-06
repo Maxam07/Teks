@@ -1,9 +1,9 @@
-// Premium Cards
-const buyMeCards = {
-    card1: { front: "https://i.pinimg.com/originals/3c/d9/c4/3cd9c417e306464378e1011577f4b68f.gif", back: "https://w0.peakpx.com/wallpaper/842/336/HD-wallpaper-black-sonic-heroes-amoled-dark-knuckles-sega-sonic-heroes-tails-thumbnail.jpg" },
-    card2: { front: "https://i.pinimg.com/originals/8b/d5/52/8bd552b7ed048b3b4b28cdb07ade4c44.gif", back: "https://i.pinimg.com/564x/80/a1/1b/80a11b571d12029f80c1a09553574fc5.jpg" },
-    card3: { front: "https://i.pinimg.com/originals/9c/41/ab/9c41abdbfa14e30f012bb57fda6fe293.gif", back: "https://w0.peakpx.com/wallpaper/434/381/HD-wallpaper-fast-black-black-and-white-car-chevy-cool-logo-motion-my-speed-super.jpg" },
-    card4: { front: "", back: "" },
+// Premium Cards image set
+const premium_cards = {
+    card1: { front: "/img/sonic_front.gif", back: "/img/sonic_back.jpg"},
+    card2: { front: "/img/transformer_front.gif", back: "/img/transformer_back.jpg" },
+    card3: { front: "/img/car_front.gif", back: "/img/car_back.jpg" },
+    card4: { front: "/img/captainMarvel_front.webp", back: "/img/captainMarvel_back.gif" },
     card5: { front: "", back: "" },
     card6: { front: "", back: "" }
 };
@@ -17,20 +17,19 @@ const P1_card_front_3 = "https://wallpaperaccess.com/full/3894340.jpg";
 const P1_card_back_3 = "https://i.pinimg.com/736x/cb/83/2c/cb832c596699ade06a6c47442d4a4715.jpg";
 
 // Player2 image sets
-const P2_card_front_1 = "https://sasiwallpaper.co.za/cdn/shop/files/Screenshot2021-09-13at12.48.52_c3fad912-5d50-4b54-96d1-16b0b3755f73.png?v=1683532338";
-const P2_card_back_1 = "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/aaa79357-9476-4c1d-b9a8-6e881f2449d3/dfqt5vc-949f6edd-1395-4789-97de-e9812fc6b803.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2FhYTc5MzU3LTk0NzYtNGMxZC1iOWE4LTZlODgxZjI0NDlkM1wvZGZxdDV2Yy05NDlmNmVkZC0xMzk1LTQ3ODktOTdkZS1lOTgxMmZjNmI4MDMuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.2Ef0yKKgGT28owSGxCG6kXALA1XPr8IOY3kw7cZo_8A";
-const P2_card_front_2 = "https://i.pinimg.com/736x/af/a1/8e/afa18e4397302db6101aa079cdc9b67f.jpg";
-const P2_card_back_2 = "https://imgcdn.stablediffusionweb.com/2024/4/20/c4d2c0fd-c075-47c2-b5ad-3c8ef334b3a6.jpg";
-const P2_card_front_3 = "https://i.pinimg.com/736x/90/83/24/9083245a2bb9a5eb82480830f0f979e5.jpg";
-const P2_card_back_3 = "https://i.pinimg.com/originals/e0/ab/a4/e0aba4a26f4476293ace530cd35790a0.jpg";
+const P2_cards = {
+    card1: {front: "/img/superman_front.webp", back: "/img/superman_back.jpg"},
+    card2: {front: "/img/cars_front.jpg", back: "/img/cars_back.jpg"},
+    card3: {front: "/img/bleach_front.jpg", back: "/img/bleach_back.jpg"}
+}
 
-// Bugaw/Player3 image set
-const P3_card_front_1 = "https://m.media-amazon.com/images/M/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg";
-const P3_card_back_1 = "https://i.pinimg.com/474x/92/cf/09/92cf093e80c6ba6e212f53d8aed527e2.jpg";
-const P3_card_front_2 = "https://i.pinimg.com/originals/73/dc/b8/73dcb82a864a1ae4739f573b948b2939.jpg"
-const P3_card_back_2 = "https://www.shutterstock.com/shutterstock/photos/2295107843/display_1500/stock-photo-marvel-comics-wallpaper-for-mobile-full-hd-wallpaper-2295107843.jpg"
-const P3_card_front_3 = "https://wallpapersmug.com/download/1224x1224/4c2607/justice-league-cartoon-comic-artwork-4k.jpg"
-const P3_card_back_3 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmx1_QBO9Mpi0yEeOZN3eo1JuferbIQemoog&s"
+// NPC/Player3 image set
+const P3_card_front_1 = "img/pokemon_front.jpg";
+const P3_card_back_1 = "img/pokemon_back.jpg";
+const P3_card_front_2 = "img/marvel_front.jpg"
+const P3_card_back_2 = "img/marvel_back.jpg"
+const P3_card_front_3 = "img/justice_league_front.jpg"
+const P3_card_back_3 = "img/justice_league_back.jpg"
 
 // Image sets for easy access with "imageFront" and "imageBack" naming
 const p1_imageSet_1 = [P1_card_front_1, P1_card_back_1];
