@@ -3,7 +3,7 @@ const premium_cards = {
     card1: { front: "/img/sonic_front.gif", back: "/img/sonic_back.jpg"},
     card2: { front: "https://i.pinimg.com/originals/8b/d5/52/8bd552b7ed048b3b4b28cdb07ade4c44.gif", back: "https://i.pinimg.com/564x/80/a1/1b/80a11b571d12029f80c1a09553574fc5.jpg" },
     card3: { front: "https://i.pinimg.com/originals/9c/41/ab/9c41abdbfa14e30f012bb57fda6fe293.gif", back: "https://w0.peakpx.com/wallpaper/434/381/HD-wallpaper-fast-black-black-and-white-car-chevy-cool-logo-motion-my-speed-super.jpg" },
-    card4: { front: "", back: "" },
+    card4: { front: "/img/captainMarvel_front.webp", back: "/img/captainMarvel_back.gif" },
     card5: { front: "", back: "" },
     card6: { front: "", back: "" }
 };
@@ -22,7 +22,7 @@ const P2_cards = {
     card3: {front: "/img/bleach_front.jpg", back: "/img/bleach_back.jpg"}
 }
 
-// Bugaw/Player3 image set
+// NPC/Player3 image set
 const P3_card_front_1 = "https://m.media-amazon.com/images/M/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg";
 const P3_card_back_1 = "https://i.pinimg.com/474x/92/cf/09/92cf093e80c6ba6e212f53d8aed527e2.jpg";
 const P3_card_front_2 = "https://i.pinimg.com/originals/73/dc/b8/73dcb82a864a1ae4739f573b948b2939.jpg"
@@ -34,6 +34,7 @@ const P3_card_back_3 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm
 const p1_imageSet_4 = [premium_cards.card1.front, premium_cards.card1.back]
 const p1_imageSet_5 = [premium_cards.card2.front, premium_cards.card2.back]
 const p1_imageSet_6 = [premium_cards.card3.front, premium_cards.card3.back]
+const p2_imageSet_7 = [premium_cards.card4.front, premium_cards.card4.back]
 
 const p1_imageSet_1 = [P1_cards.card1.front, P1_cards.card1.back];
 const p1_imageSet_2 = [P1_cards.card2.front, P1_cards.card2.back];
@@ -63,8 +64,11 @@ let p1Money = 2000; // Initial money for Player 1
 let p2Money = 2000; // Initial money for Player 2
 
 // This object will store which card has been picked
-let buyCards = {premC1: null};
 let pickedCards = { demo1: null, demo: null, demo2: null };
+
+// Premium Card Modal
+const P1_premCard = document.querySelector(".P1_prem_card_modal");
+const P2_premCard = document.querySelector(".P2_prem_card_modal");
 
 // Function to flip the card between front and back based on its current src
 function flip(element, imageSet) {
@@ -114,6 +118,10 @@ function flip(element, imageSet) {
     else if(imageSet === 12) {
         currentImage === premium_cards.card3.front ? element.src = premium_cards.card3.back : element.src = premium_cards.card3.front;
     }
+    else if(imageSet === 13) {
+        element.src = element.classList.contains('flipped') ? element.src = premium_cards.card4.front : element.src = premium_cards.card4.back;
+        element.classList.toggle('flipped');
+    }
 }
 
 // Function to set the initial card image when a player picks a card
@@ -146,6 +154,8 @@ function pickCard(cardId, imageSet) {
         card.src = premium_cards.card2.back
     } else if (imageSet === 12) {
         card.src = premium_cards.card3.back
+    } else if (imageSet === 13) {
+        card.src = premium_cards.card4.back
     }
 }
 
@@ -156,8 +166,9 @@ function showCardBack(playerId, imageSet) {
         P2_cards.card1.back, P2_cards.card2.back, P2_cards.card3.back,
         P3_card_back_1, P3_card_back_2, P3_card_back_3,
         premium_cards.card1.back, premium_cards.card2.back, premium_cards.card3.back,
+        premium_cards.card4.back,
     ];
-    if (imageSet >= 1 && imageSet <= 12) {
+    if (imageSet >= 1 && imageSet <= 13) {
         card.src = cardBacks[imageSet - 1];  // imageSet is 1-indexed, array is 0-indexed
     }
 }
@@ -207,7 +218,7 @@ function teksPlay() {
     function player2() {
         // Randomly assign image for Player 2 (demo2)
         if (pickedCards.demo2 !== null) {
-            let imageSetForPlayer2 = pickedCards.demo2 === 4 ? p2_imageSet_1 : pickedCards.demo2 === 5 ? p2_imageSet_2 : p2_imageSet_3;
+            let imageSetForPlayer2 = pickedCards.demo2 === 4 ? p2_imageSet_1 : pickedCards.demo2 === 5 ? p2_imageSet_2 : pickedCards.demo2 === 6 ? p2_imageSet_3 : p2_imageSet_7;
             let ranTimeOut = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;;
             let index = 0; // Reset index for Player 2's images
             let interval = setInterval(() => {
@@ -354,14 +365,24 @@ function placeBetandStart() {
     document.getElementById("betLabel").innerHTML = finalBet;
 }
 
-function premCardsOpen() {
-    const premCard = document.querySelector(".prem_card_modal");
-    premCard.style.display = "flex"
+function premCardsOpen(playersNum) {
+    if(playersNum === 1) {
+        P1_premCard.style.display = "flex"
+        console.log("p1")
+    } else if(playersNum === 2) {
+        P2_premCard.style.display = "flex"
+        console.log("p2")
+    }
 }
 
-function premCardsClose() {
-    const premCard = document.querySelector(".prem_card_modal");
-    premCard.style.display = "none"
+function premCardsClose(playersNum) {
+    if(playersNum === 1) {
+        P1_premCard.style.display = "none"
+        console.log("p1")
+    } else if(playersNum === 2) {
+        P2_premCard.style.display = "none"
+        console.log("p2")
+    }
 }
 
 function buyPremCard(cardId, imageSet) {
@@ -403,6 +424,42 @@ function buyPremCard(cardId, imageSet) {
         } else {
             document.querySelector(".premBtn12").style.display = "block"
             document.getElementById("premBuyerStat").innerHTML = "Insufficient balance!"
+        }
+    } else if (imageSet === 13) {
+        document.getElementById("premBuyerStatp2").innerHTML = "Congratulations! You acquired a premium card!";
+        document.querySelector(".premBtn13").style.display = "none"
+        if (p2Money >= premCardValue) {
+            document.querySelector(".premBtnPick13").style.display = "block"    
+            p2Money -= premCardValue; // Deduct money
+            p2_initial.innerHTML = p2Money; // Update UI
+            document.getElementById("balp2").innerHTML = p2Money;
+        } else {
+            document.querySelector(".premBtn13").style.display = "block"
+            document.getElementById("premBuyerStatp2").innerHTML = "Insufficient balance!"
+        }
+    } else if (imageSet === 14) {
+        document.getElementById("premBuyerStatp2").innerHTML = "Congratulations! You acquired a premium card!";
+        document.querySelector(".premBtn14").style.display = "none"
+        if (p2Money >= premCardValue) {
+            document.querySelector(".premBtnPick14").style.display = "block"    
+            p2Money -= premCardValue; // Deduct money
+            p2_initial.innerHTML = p2Money; // Update UI
+            document.getElementById("balp2").innerHTML = p2Money;
+        } else {
+            document.querySelector(".premBtn14").style.display = "block"
+            document.getElementById("premBuyerStatp2").innerHTML = "Insufficient balance!"
+        }
+    } else if (imageSet === 15) {
+        document.getElementById("premBuyerStatp2").innerHTML = "Congratulations! You acquired a premium card!";
+        document.querySelector(".premBtn15").style.display = "none"
+        if (p2Money >= premCardValue) {
+            document.querySelector(".premBtnPick15").style.display = "block"    
+            p2Money -= premCardValue; // Deduct money
+            p2_initial.innerHTML = p2Money; // Update UI
+            document.getElementById("balp2").innerHTML = p2Money;
+        } else {
+            document.querySelector(".premBtn15").style.display = "block"
+            document.getElementById("premBuyerStatp2").innerHTML = "Insufficient balance!"
         }
     }
 }
