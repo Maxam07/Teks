@@ -47,13 +47,13 @@
                     NPC
                     <div>
                         <img class="teksImage" onclick="flip(this, 7)"
-                            src="https://m.media-amazon.com/images/M/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+                            src="img/pokemon_front.jpg"
                             alt="pokemon">
                         <img class="teksImage" onclick="flip(this, 8)"
-                            src="https://i.pinimg.com/originals/73/dc/b8/73dcb82a864a1ae4739f573b948b2939.jpg"
+                            src="img/marvel_front.jpg"
                             alt="marvel">
                         <img class="teksImage" onclick="flip(this, 9)"
-                            src="https://wallpapersmug.com/download/1224x1224/4c2607/justice-league-cartoon-comic-artwork-4k.jpg"
+                            src="img/justice_league_front.jpg   "
                             alt="justice league">
                     </div>
                     <div>
@@ -167,38 +167,36 @@
             </div>
         </div>
 
-        <!-- Premium Cards Modal-->
-        <div class="prem_card_modal">
-            <div class="prem_modal_style">
-                <h5 style="padding-bottom: 1rem;">₱500 Each</h5>
-                <div style="display: flex; justify-content: center;">
-                    <h5>Balance: ₱</h5>
-                    <h5 id="bal"></h5>
-                </div>
-                <h6 id="premBuyerStat"></h6>
-                <div class="premium_card_container">
-                    <div class="prem_box">
-                        <img class="teksImage" onclick="flip(this, 10)"
-                            src="https://i.pinimg.com/originals/3c/d9/c4/3cd9c417e306464378e1011577f4b68f.gif"
-                            alt="sonic">
-                        <button class="premBtn10" onclick="buyPremCard('demo1', 10)">Buy</button>
-                        <button class="premBtnPick10" onclick="pickCard('demo1', 10)">Pick</button>
+            <!-- PLAYER 1 Premium Cards Modal -->
+            <div class="P1_prem_card_modal">
+                <div class="prem_modal_style">
+                    <h5 style="padding-bottom: 1rem;">₱500 Each</h5>
+                    <div style="display: flex; justify-content: center;">
+                        <h5>Balance: ₱</h5>
+                        <h5 id="bal"></h5>
                     </div>
-                    <div class="prem_box">
-                        <img class="teksImage" onclick="flip(this, 11)"
-                            src="https://i.pinimg.com/originals/8b/d5/52/8bd552b7ed048b3b4b28cdb07ade4c44.gif"
-                            alt="transformers">
-                        <button class="premBtn11" onclick="buyPremCard('demo1', 11)">Buy</button>
-                        <button class="premBtnPick11" onclick="pickCard('demo1', 11)">Pick</button>
+                    <h6 id="premBuyerStat"></h6>
+                    <div class="premium_card_container">
+                        <div class="prem_box">
+                            <img class="teksImage" onclick="flip(this, 10)" src="/img/sonic_front.gif" alt="sonic">
+                            <button class="premBtn10" onclick="buyPremCard('demo1', 10)">Buy</button>
+                            <button class="premBtnPick10" onclick="pickCard('demo1', 10)">Pick</button>
+                        </div>
+                        <div class="prem_box">
+                            <img class="teksImage" onclick="flip(this, 11)"
+                                src="/img/transformer_front.gif"
+                                alt="transformers">
+                            <button class="premBtn11" onclick="buyPremCard('demo1', 11)">Buy</button>
+                            <button class="premBtnPick11" onclick="pickCard('demo1', 11)">Pick</button>
+                        </div>
+                        <div class="prem_box">
+                            <img class="teksImage" onclick="flip(this, 12)"
+                                src="img/car_front.gif"
+                                alt="cool car">
+                            <button class="premBtn12" onclick="buyPremCard('demo1', 12)">Buy</button>
+                            <button class="premBtnPick12" onclick="pickCard('demo1', 12)">Pick</button>
+                        </div>
                     </div>
-                    <div class="prem_box">
-                        <img class="teksImage" onclick="flip(this, 12)"
-                            src="https://i.pinimg.com/originals/9c/41/ab/9c41abdbfa14e30f012bb57fda6fe293.gif" 
-                            alt="cool car">
-                        <button class="premBtn12" onclick="buyPremCard('demo1', 12)">Buy</button>
-                        <button class="premBtnPick12" onclick="pickCard('demo1', 12)">Pick</button>
-                    </div>
-                </div>
 
                 <div class="modal_btn">
                     <button onclick="premCardsClose()">Close</button>
