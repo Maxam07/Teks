@@ -1,7 +1,7 @@
 // Premium Cards image set
 const premium_cards = {
     card1: { front: "/img/sonic_front.gif", back: "/img/sonic_back.jpg"},
-    card2: { front: "https://i.pinimg.com/originals/8b/d5/52/8bd552b7ed048b3b4b28cdb07ade4c44.gif", back: "https://i.pinimg.com/564x/80/a1/1b/80a11b571d12029f80c1a09553574fc5.jpg" },
+    card2: { front: "/img/transformers_front.gif", back: "/img/transformers_back.jpg" },
     card3: { front: "https://i.pinimg.com/originals/9c/41/ab/9c41abdbfa14e30f012bb57fda6fe293.gif", back: "https://w0.peakpx.com/wallpaper/434/381/HD-wallpaper-fast-black-black-and-white-car-chevy-cool-logo-motion-my-speed-super.jpg" },
     card4: { front: "/img/captainMarvel_front.webp", back: "/img/captainMarvel_back.gif" },
     card5: { front: "", back: "" },
