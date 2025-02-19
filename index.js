@@ -4,8 +4,8 @@ const premium_cards = {
     card2: { front: "/img/transformers_front.gif", back: "/img/transformers_back.jpg" },
     card3: { front: "https://i.pinimg.com/originals/9c/41/ab/9c41abdbfa14e30f012bb57fda6fe293.gif", back: "https://w0.peakpx.com/wallpaper/434/381/HD-wallpaper-fast-black-black-and-white-car-chevy-cool-logo-motion-my-speed-super.jpg" },
     card4: { front: "/img/captainMarvel_front.webp", back: "/img/captainMarvel_back.gif" },
-    card5: { front: "", back: "" },
-    card6: { front: "", back: "" }
+    card5: { front: "/img/luffy_front.gif", back: "/img/luffy_back.gif" },
+    card6: { front: "/img/totoro_front.gif", back: "/img/totoro_back.gif" }
 };
 
 // Player1 Cards image set
@@ -22,19 +22,20 @@ const P2_cards = {
     card3: {front: "/img/bleach_front.jpg", back: "/img/bleach_back.jpg"}
 }
 
-// NPC/Player3 image set
-const P3_card_front_1 = "https://m.media-amazon.com/images/M/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg";
-const P3_card_back_1 = "https://i.pinimg.com/474x/92/cf/09/92cf093e80c6ba6e212f53d8aed527e2.jpg";
-const P3_card_front_2 = "https://i.pinimg.com/originals/73/dc/b8/73dcb82a864a1ae4739f573b948b2939.jpg"
-const P3_card_back_2 = "https://www.shutterstock.com/shutterstock/photos/2295107843/display_1500/stock-photo-marvel-comics-wallpaper-for-mobile-full-hd-wallpaper-2295107843.jpg"
-const P3_card_front_3 = "https://wallpapersmug.com/download/1224x1224/4c2607/justice-league-cartoon-comic-artwork-4k.jpg"
-const P3_card_back_3 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmx1_QBO9Mpi0yEeOZN3eo1JuferbIQemoog&s"
+// NPC/Player3 image set 
+const NPC_cards = {
+    card1: {front: "https://m.media-amazon.com/images/M/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", back: "https://i.pinimg.com/474x/92/cf/09/92cf093e80c6ba6e212f53d8aed527e2.jpg"},
+    card2: {front: "https://i.pinimg.com/originals/73/dc/b8/73dcb82a864a1ae4739f573b948b2939.jpg", back: "https://www.shutterstock.com/shutterstock/photos/2295107843/display_1500/stock-photo-marvel-comics-wallpaper-for-mobile-full-hd-wallpaper-2295107843.jpg"},
+    card3: {front: "https://wallpapersmug.com/download/1224x1224/4c2607/justice-league-cartoon-comic-artwork-4k.jpg", back: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmx1_QBO9Mpi0yEeOZN3eo1JuferbIQemoog&s"} 
+}
 
 // Image sets for easy access with "imageFront" and "imageBack" naming
 const p1_imageSet_4 = [premium_cards.card1.front, premium_cards.card1.back]
 const p1_imageSet_5 = [premium_cards.card2.front, premium_cards.card2.back]
 const p1_imageSet_6 = [premium_cards.card3.front, premium_cards.card3.back]
 const p2_imageSet_7 = [premium_cards.card4.front, premium_cards.card4.back]
+const p2_imageSet_8 = [premium_cards.card5.front, premium_cards.card5.back]
+const p2_imageSet_9 = [premium_cards.card6.front, premium_cards.card6.back]
 
 const p1_imageSet_1 = [P1_cards.card1.front, P1_cards.card1.back];
 const p1_imageSet_2 = [P1_cards.card2.front, P1_cards.card2.back];
@@ -44,9 +45,9 @@ const p2_imageSet_1 = [P2_cards.card1.front, P2_cards.card1.back];
 const p2_imageSet_2 = [P2_cards.card2.front, P2_cards.card2.back];
 const p2_imageSet_3 = [P2_cards.card3.front, P2_cards.card3.back];
 
-const p3_imageSet_1 = [P3_card_front_1, P3_card_back_1];
-const p3_imageSet_2 = [P3_card_front_2, P3_card_back_2];
-const p3_imageSet_3 = [P3_card_front_3, P3_card_back_3];
+const p3_imageSet_1 = [NPC_cards.card1.front, NPC_cards.card1.back];
+const p3_imageSet_2 = [NPC_cards.card2.front, NPC_cards.card2.back];
+const p3_imageSet_3 = [NPC_cards.card3.front, NPC_cards.card3.back];
 
 // Result 
 let randomNumPlayer1;
@@ -72,9 +73,6 @@ const P2_premCard = document.querySelector(".P2_prem_card_modal");
 
 // Function to flip the card between front and back based on its current src
 function flip(element, imageSet) {
-    let currentImage = element.src;
-
-    // If imageSet is picked
     if (imageSet === 1) {
         element.src = element.classList.contains('flipped') ? element.src = P1_cards.card1.back : P1_cards.card1.front;
         element.classList.toggle('flipped');
@@ -96,30 +94,43 @@ function flip(element, imageSet) {
         element.classList.toggle('flipped');
     }
     else if(imageSet === 6) {
-        element.src = element.classList.contains('flipped') ? P2_cards.card3.back : element.src = P2_cards.card3.front;
+        element.src = element.classList.contains('flipped') ? element.src = P2_cards.card3.back : P2_cards.card3.front;
         element.classList.toggle('flipped');
     }
     else if(imageSet === 7) {
-        currentImage === P3_card_front_1 ? element.src = P3_card_back_1 : element.src = P3_card_front_1;
+        element.src = element.classList.contains('flipped') ? element.src = NPC_cards.card1.back : NPC_cards.card1.front;
+        element.classList.toggle('flipped');
     }
     else if(imageSet === 8) {
-        currentImage === P3_card_front_2 ? element.src = P3_card_back_2 : element.src = P3_card_front_2;
+        element.src = element.classList.contains('flipped') ? element.src = NPC_cards.card2.back : NPC_cards.card2.front;
+        element.classList.toggle('flipped');
     }
     else if(imageSet === 9) {
-        currentImage === P3_card_front_3 ? element.src = P3_card_back_3 : element.src = P3_card_front_3;
+        element.src = element.classList.contains('flipped') ? element.src = NPC_cards.card3.back : NPC_cards.card3.front;
+        element.classList.toggle('flipped');
     } 
     else if(imageSet === 10) {
         element.src = element.classList.contains('flipped') ? element.src = premium_cards.card1.front : element.src = premium_cards.card1.back;
         element.classList.toggle('flipped');
     }
     else if(imageSet === 11) {
-        currentImage === premium_cards.card2.front ? element.src = premium_cards.card2.back : element.src = premium_cards.card2.front;  
+        element.src = element.classList.contains('flipped') ? element.src = premium_cards.card2.front : element.src = premium_cards.card2.back;
+        element.classList.toggle('flipped');
     }
     else if(imageSet === 12) {
-        currentImage === premium_cards.card3.front ? element.src = premium_cards.card3.back : element.src = premium_cards.card3.front;
+        element.src = element.classList.contains('flipped') ? element.src = premium_cards.card3.front : element.src = premium_cards.card3.back;
+        element.classList.toggle('flipped');
     }
     else if(imageSet === 13) {
         element.src = element.classList.contains('flipped') ? element.src = premium_cards.card4.front : element.src = premium_cards.card4.back;
+        element.classList.toggle('flipped');
+    }
+    else if(imageSet === 14) {
+        element.src = element.classList.contains('flipped') ? element.src = premium_cards.card5.front : element.src = premium_cards.card5.back;
+        element.classList.toggle('flipped');
+    }
+    else if(imageSet === 15) {
+        element.src = element.classList.contains('flipped') ? element.src = premium_cards.card6.front : element.src = premium_cards.card6.back;
         element.classList.toggle('flipped');
     }
 }
@@ -130,32 +141,54 @@ function pickCard(cardId, imageSet) {
     pickedCards[cardId] = imageSet;  // Store which set the player picked
 
     // Set the initial image for the card based on the image set picked
-    if (imageSet === 1) {
-        card.src = P1_cards.card1.back; 
-    } else if (imageSet === 2) {
-        card.src = P1_cards.card2.back; 
-    } else if (imageSet === 3) {
-        card.src = P1_cards.card3.back; 
-    } else if (imageSet === 4) {
-        card.src = P2_cards.card1.back;
-    } else if (imageSet === 5) {
-        card.src = P2_cards.card2.back;
-    } else if (imageSet === 6) {
-        card.src = P2_cards.card3.back;
-    } else if (imageSet === 7) {
-        card.src = P3_card_back_1;
-    } else if (imageSet === 8) {
-        card.src = P3_card_back_2;
-    } else if (imageSet === 9) {
-        card.src = P3_card_back_3;
-    } else if (imageSet === 10) {
-        card.src = premium_cards.card1.back
-    } else if (imageSet === 11) {
-        card.src = premium_cards.card2.back
-    } else if (imageSet === 12) {
-        card.src = premium_cards.card3.back
-    } else if (imageSet === 13) {
-        card.src = premium_cards.card4.back
+    switch (imageSet) {
+        case 1: 
+            card.src = P1_cards.card1.back
+            break;
+        case 2: 
+            card.src = P1_cards.card2.back
+            break;
+        case 3: 
+            card.src = P1_cards.card3.back
+            break;
+        case 4: 
+            card.src = NPC_cards.card1.back
+            break;
+        case 5: 
+            card.src = NPC_cards.card2.back
+            break;
+        case 6: 
+            card.src = NPC_cards.card3.back
+            break;
+        case 7: 
+            card.src = P2_cards.card1.back
+            break;
+        case 8: 
+            card.src = P2_cards.card2.back
+            break;
+        case 9: 
+            card.src = P2_cards.card3.back
+            break;
+        case 10: 
+            card.src = premium_cards.card1.back
+            break;
+        case 11: 
+            card.src = premium_cards.card2.back
+            break;
+        case 12: 
+            card.src = premium_cards.card3.back
+            break;
+        case 13: 
+            card.src = premium_cards.card4.back
+            break;
+        case 14: 
+            card.src = premium_cards.card5.back
+            break;
+        case 15: 
+            card.src = premium_cards.card6.back
+            break;
+        default:
+            throw new Error("Invalid image");
     }
 }
 
@@ -164,11 +197,11 @@ function showCardBack(playerId, imageSet) {
     const cardBacks = [
         P1_cards.card1.back, P1_cards.card2.back, P1_cards.card3.back,
         P2_cards.card1.back, P2_cards.card2.back, P2_cards.card3.back,
-        P3_card_back_1, P3_card_back_2, P3_card_back_3,
+        NPC_cards.card1.back, NPC_cards.card2.back, NPC_cards.card3.back,
         premium_cards.card1.back, premium_cards.card2.back, premium_cards.card3.back,
-        premium_cards.card4.back,
+        premium_cards.card4.back, premium_cards.card5.back, premium_cards.card6.back
     ];
-    if (imageSet >= 1 && imageSet <= 13) {
+    if (imageSet >= 1 && imageSet <= 16) {
         card.src = cardBacks[imageSet - 1];  // imageSet is 1-indexed, array is 0-indexed
     }
 }
@@ -218,7 +251,7 @@ function teksPlay() {
     function player2() {
         // Randomly assign image for Player 2 (demo2)
         if (pickedCards.demo2 !== null) {
-            let imageSetForPlayer2 = pickedCards.demo2 === 4 ? p2_imageSet_1 : pickedCards.demo2 === 5 ? p2_imageSet_2 : pickedCards.demo2 === 6 ? p2_imageSet_3 : p2_imageSet_7;
+            let imageSetForPlayer2 = pickedCards.demo2 === 4 ? p2_imageSet_1 : pickedCards.demo2 === 5 ? p2_imageSet_2 : pickedCards.demo2 === 6 ? p2_imageSet_3 : pickedCards.demo2 === 13 ? p2_imageSet_7: pickedCards.demo2 === 14 ? p2_imageSet_8 : p2_imageSet_9 ;
             let ranTimeOut = Math.floor(Math.random() * (5000 - 1000 + 1)) + 1000;;
             let index = 0; // Reset index for Player 2's images
             let interval = setInterval(() => {
@@ -368,20 +401,16 @@ function placeBetandStart() {
 function premCardsOpen(playersNum) {
     if(playersNum === 1) {
         P1_premCard.style.display = "flex"
-        console.log("p1")
     } else if(playersNum === 2) {
         P2_premCard.style.display = "flex"
-        console.log("p2")
     }
 }
 
 function premCardsClose(playersNum) {
     if(playersNum === 1) {
         P1_premCard.style.display = "none"
-        console.log("p1")
     } else if(playersNum === 2) {
         P2_premCard.style.display = "none"
-        console.log("p2")
     }
 }
 
