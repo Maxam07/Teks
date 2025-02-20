@@ -1,32 +1,34 @@
 // Premium Cards image set
 const premium_cards = {
-    card1: { front: "/img/sonic_front.gif", back: "/img/sonic_back.jpg"},
-    card2: { front: "/img/transformers_front.gif", back: "/img/transformers_back.jpg" },
-    card3: { front: "https://i.pinimg.com/originals/9c/41/ab/9c41abdbfa14e30f012bb57fda6fe293.gif", back: "https://w0.peakpx.com/wallpaper/434/381/HD-wallpaper-fast-black-black-and-white-car-chevy-cool-logo-motion-my-speed-super.jpg" },
-    card4: { front: "/img/captainMarvel_front.webp", back: "/img/captainMarvel_back.gif" },
-    card5: { front: "/img/luffy_front.gif", back: "/img/luffy_back.gif" },
-    card6: { front: "/img/totoro_front.gif", back: "/img/totoro_back.gif" }
+    card1: { front: "img/dragonballpremuim_front.gif", back: "img/dragonballpremuim_back.webp"},
+    card2: { front: "img/transformerpremuim_front.gif", back: "img/transformerpremuim_back.gif" },
+    // Lorenzo Task
+    card3: { front: "img/bleachpremium_front.gif", back: "img/bleachpremium_back.gif" },
+    card4: { front: "img/captainMarvel_front.webp", back: "img/captainMarvel_back.gif" },
+    card5: { front: "img/hunterxhunter_front.webp", back: "img/hunterxhunter_back.gif" },
+    card6: { front: "img/narutopremium_front.gif", back: "img/narutopremium_back.gif" }
 };
 
 // Player1 Cards image set
 const P1_cards = {
-    card1: {front: "/img/naruto_front.jpg", back: "/img/naruto_back.png"},
-    card2: {front: "/img/dragonball_front.webp", back: "/img/dragonball_back.jpg"},
-    card3: {front: "/img/ben10_front.jpg", back: "/img/ben10_back.jpg"}
+    card1: {front: "img/naruto_front.jpg", back: "img/naruto_back.png"},
+    card2: {front: "img/dragonball_front.webp", back: "img/dragonball_back.jpg"},
+    card3: {front: "img/ben10_front.jpg", back: "img/ben10_back.jpg"}
 }
 
 // Player2 image sets
 const P2_cards = {
-    card1: {front: "/img/superman_front.webp", back: "/img/superman_back.jpg"},
-    card2: {front: "/img/cars_front.jpg", back: "/img/cars_back.jpg"},
-    card3: {front: "/img/bleach_front.jpg", back: "/img/bleach_back.jpg"}
+    card1: {front: "img/superman_front.webp", back: "img/superman_back.jpg"},
+    card2: {front: "img/cars_front.jpg", back: "img/cars_back.jpg"},
+    card3: {front: "img/bleach_front.jpg", back: "img/bleach_back.jpg"}
 }
 
 // NPC/Player3 image set 
 const NPC_cards = {
-    card1: {front: "https://m.media-amazon.com/images/M/MV5BMzE0ZDU1MzQtNTNlYS00YjNlLWE2ODktZmFmNDYzMTBlZTBmXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg", back: "https://i.pinimg.com/474x/92/cf/09/92cf093e80c6ba6e212f53d8aed527e2.jpg"},
-    card2: {front: "https://i.pinimg.com/originals/73/dc/b8/73dcb82a864a1ae4739f573b948b2939.jpg", back: "https://www.shutterstock.com/shutterstock/photos/2295107843/display_1500/stock-photo-marvel-comics-wallpaper-for-mobile-full-hd-wallpaper-2295107843.jpg"},
-    card3: {front: "https://wallpapersmug.com/download/1224x1224/4c2607/justice-league-cartoon-comic-artwork-4k.jpg", back: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmx1_QBO9Mpi0yEeOZN3eo1JuferbIQemoog&s"} 
+    // Lorenzo Task
+    card1: {front: "img/pokemon_front.jpg", back: "img/pokemon_back.jpg"},
+    card2: {front: "img/justiceleague_front.jpg", back: "img/justiceleague_back.jpg"},
+    card3: {front: "img/x-men_front.jpg", back: "img/x-men_back.jpg"} 
 }
 
 // Image sets for easy access with "imageFront" and "imageBack" naming
@@ -57,6 +59,7 @@ let randomNumPlayer3;
 // Bet
 let tossCards = document.getElementById("tossCard");
 let resHolder = document.getElementById("result");
+let setting = document.querySelector(".settings_container");
 let finalBet = 0;
 let p1_initial;
 let p2_initial;
@@ -152,22 +155,22 @@ function pickCard(cardId, imageSet) {
             card.src = P1_cards.card3.back
             break;
         case 4: 
-            card.src = NPC_cards.card1.back
-            break;
-        case 5: 
-            card.src = NPC_cards.card2.back
-            break;
-        case 6: 
-            card.src = NPC_cards.card3.back
-            break;
-        case 7: 
             card.src = P2_cards.card1.back
             break;
-        case 8: 
+        case 5: 
             card.src = P2_cards.card2.back
             break;
-        case 9: 
+        case 6: 
             card.src = P2_cards.card3.back
+            break;
+        case 7: 
+            card.src = NPC_cards.card1.back
+            break;
+        case 8: 
+            card.src = NPC_cards.card2.back
+            break;
+        case 9: 
+            card.src = NPC_cards.card3.back
             break;
         case 10: 
             card.src = premium_cards.card1.back
@@ -501,4 +504,12 @@ function hideModal() {
 function showResultModal() {
     document.querySelector(".modal_style").style.visibility = "visible";
     document.querySelector(".showResultModal").style.visibility = "hidden"
+}
+
+function settings() {
+   setting.style.display = "flex"
+}
+
+function closeSetting() {
+    setting.style.display = "none"
 }

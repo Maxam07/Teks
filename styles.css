@@ -35,6 +35,40 @@ a:active {
     color: burlywood;
 }
 
+.gear {
+    position: absolute;
+    bottom: 3%;
+    right: 0;
+    font-size: 2rem;
+    padding-right: 2rem;
+}
+
+.gear:hover {
+    color: whitesmoke;
+}
+
+.settings_container {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.settings_button {
+    padding: 1rem;
+    margin: .5rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border: 1px solid #3f3f3f;
+}
+
 .box-container {
     display: flex;
     flex-direction: row;
@@ -186,7 +220,7 @@ h1 {
     flex-direction: column;
     justify-content: space-evenly;
     width: 27rem;
-    height: 15rem;
+    height: max-content;
     background-color: rgb(254, 254, 254); /* Semi-transparent dark background */
     color: rgb(68, 68, 68); /* Text color */
     padding: 20px;

@@ -11,6 +11,17 @@
 
 <body>
     <div class="playersCard">
+        <i class="fa-solid fa-gear gear" onclick="settings()"></i>
+        <div class="settings_container">
+            <div class="modal_style">
+                <h4>Settings</h4>
+                <button class="settings_button">Quit</button>
+                <button class="settings_button">Instruction</button>
+                <button class="settings_button">History</button>
+                <button class="settings_button">Sound</button>
+                <button class="settings_button" onclick="closeSetting()">Back</button>
+            </div>
+        </div>
         <div class="box-container player1">
             <div style="padding: 2rem;">
                 <div class="plus_prem_card">
@@ -18,19 +29,19 @@
                     Player I
                 </div>
 
-                <img class="teksImage" onclick="flip(this, 1)" src="/img/naruto_front.jpg" alt="naruto">
+                <img class="teksImage" onclick="flip(this, 1)" src="img/naruto_front.jpg" alt="naruto">
 
                 <div>
                     <button onclick="pickCard('demo1', 1)">Pick</button>
                 </div>
 
-                <img class="teksImage" onclick="flip(this, 2)" src="/img/dragonball_front.webp" alt="dragonballsZ">
+                <img class="teksImage" onclick="flip(this, 2)" src="img/dragonball_front.webp" alt="dragonballsZ">
 
                 <div>
                     <button onclick="pickCard('demo1', 2)">Pick</button>
                 </div>
 
-                <img class="teksImage" onclick="flip(this, 3)" src="/img/ben10_front.jpg" alt="ben10">
+                <img class="teksImage" onclick="flip(this, 3)" src="img/ben10_front.jpg" alt="ben10">
 
                 <div>
                     <button onclick="pickCard('demo1', 3)">Pick</button>
@@ -41,9 +52,9 @@
                 <div style="padding-top: 2rem;">
                     NPC
                     <div>
-                        <img class="teksImage" onclick="flip(this, 7)" src="/img/pokemon_front.jpg" alt="pokemon">
-                        <img class="teksImage" onclick="flip(this, 8)" src="/img/x-men_front.jpg" alt="marvel">
-                        <img class="teksImage" onclick="flip(this, 9)" src="/img/justiceleague_front.jpg"
+                        <img class="teksImage" onclick="flip(this, 7)" src="img/pokemon_front.jpg" alt="pokemon">
+                        <img class="teksImage" onclick="flip(this, 8)" src="img/justiceleague_front.jpg" alt="marvel">
+                        <img class="teksImage" onclick="flip(this, 9)" src="img/x-men_front.jpg"
                             alt="justice league">
                     </div>
                     <div>
@@ -64,11 +75,11 @@
                         <i class="fa-solid fa-cart-plus premium" onclick="premCardsOpen(2)"></i>
                         Player II
                     </div>
-                    <img class="teksImage" onclick="flip(this, 4)" src="/img/superman_front.webp" alt="superman">
+                    <img class="teksImage" onclick="flip(this, 4)" src="img/superman_front.webp" alt="superman">
                     <div>
                         <button onclick="pickCard('demo2', 4)">Pick</button>
                     </div>
-                    <img class="teksImage" onclick="flip(this, 5)" src="/img/cars_front.jpg" alt="cars">
+                    <img class="teksImage" onclick="flip(this, 5)" src="img/cars_front.jpg" alt="cars">
                     <div>
                         <button onclick="pickCard('demo2', 5)">Pick</button>
                     </div>
@@ -164,7 +175,7 @@
                     <h6 id="premBuyerStat"></h6>
                     <div class="premium_card_container">
                         <div class="prem_box">
-                            <img class="teksImage" onclick="flip(this, 10)" src="/img/dragonballpremuim_front.gif"
+                            <img class="teksImage" onclick="flip(this, 10)" src="img/dragonballpremuim_front.gif"
                                 alt="sonic">
                             <button class="premBtn10" onclick="buyPremCard('demo1', 10)">Buy</button>
                             <button class="premBtnPick10" onclick="pickCard('demo1', 10)">Pick</button>
@@ -176,7 +187,7 @@
                             <button class="premBtnPick11" onclick="pickCard('demo1', 11)">Pick</button>
                         </div>
                         <div class="prem_box">
-                            <img class="teksImage" onclick="flip(this, 12)" src="/img/narutopremium_front.gif"
+                            <img class="teksImage" onclick="flip(this, 12)" src="img/bleachpremium_front.gif"
                                 alt="Naruto">
                             <button class="premBtn12" onclick="buyPremCard('demo1', 12)">Buy</button>
                             <button class="premBtnPick12" onclick="pickCard('demo1', 12)">Pick</button>
@@ -201,20 +212,17 @@
                     <h6 id="premBuyerStatp2"></h6>
                     <div class="premium_card_container">
                         <div class="prem_box">
-                            <img class="teksImage" onclick="flip(this, 13)" src="/img/captainMarvel_front.webp"
-                                alt="sonic">
+                            <img class="teksImage" onclick="flip(this, 13)" src="img/captainMarvel_front.webp" alt="sonic">
                             <button class="premBtn13" onclick="buyPremCard('demo2', 13)">Buy</button>
                             <button class="premBtnPick13" onclick="pickCard('demo2', 13)">Pick</button>
                         </div>
                         <div class="prem_box">
-                            <img class="teksImage" onclick="flip(this, 14)" src="/img/hunterxhunter_front.webp"
-                                alt="hunterXhunter">
+                            <img class="teksImage" onclick="flip(this, 14)" src="img/hunterxhunter_front.webp" alt="hunterXhunter">
                             <button class="premBtn14" onclick="buyPremCard('demo2', 14)">Buy</button>
                             <button class="premBtnPick14" onclick="pickCard('demo2', 14)">Pick</button>
                         </div>
                         <div class="prem_box">
-                            <img class="teksImage" onclick="flip(this, 15)" src="/img/bleachpremium_front.gif"
-                                alt="bleach">
+                            <img class="teksImage" onclick="flip(this, 15)" src="img/narutopremium_front.gif" alt="bleach">
                             <button class="premBtn15" onclick="buyPremCard('demo2', 15)">Buy</button>
                             <button class="premBtnPick15" onclick="pickCard('demo2', 15)">Pick</button>
                         </div>
